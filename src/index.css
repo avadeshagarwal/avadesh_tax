@@ -1,0 +1,456 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Deep midnight slate — less violet, more institutional */
+  --color-navy-50: #eef2f7;
+  --color-navy-100: #d4dce8;
+  --color-navy-200: #a3b1c6;
+  --color-navy-300: #6e83a3;
+  --color-navy-400: #455a7d;
+  --color-navy-500: #2a3f63;
+  --color-navy-600: #1d2f4f;
+  --color-navy-700: #14223c;
+  --color-navy-800: #0d172a;
+  --color-navy-900: #080f1e;
+  --color-navy-950: #050912;
+
+  /* Refined amber — Bloomberg-style, not bright luxury gold */
+  --color-gold-50: #fbf6eb;
+  --color-gold-100: #f5e8c8;
+  --color-gold-200: #ecd089;
+  --color-gold-300: #dfb754;
+  --color-gold-400: #cda23a;
+  --color-gold-500: #b4861f;
+  --color-gold-600: #946a16;
+  --color-gold-700: #745214;
+  --color-gold-800: #5e4216;
+  --color-gold-900: #4e371a;
+
+  /* Emerald accent — finance / growth */
+  --color-emerald-50: #ecfdf5;
+  --color-emerald-100: #d1fae5;
+  --color-emerald-200: #a7f3d0;
+  --color-emerald-300: #6ee7b7;
+  --color-emerald-400: #34d399;
+  --color-emerald-500: #10b981;
+  --color-emerald-600: #059669;
+  --color-emerald-700: #047857;
+  --color-emerald-800: #065f46;
+  --color-emerald-900: #064e3b;
+}
+
+/* Theme variables */
+:root,
+html.dark {
+  --bg-base: #050912;
+  --bg-elevated: #080f1e;
+  --fg-base: #e6ecf5;
+  --fg-muted: rgba(230, 236, 245, 0.65);
+  --border-base: rgba(255, 255, 255, 0.08);
+  --accent: #cda23a;
+  --accent-2: #10b981;
+  color-scheme: dark;
+}
+
+html.light {
+  --bg-base: #f7f8fb;
+  --bg-elevated: #ffffff;
+  --fg-base: #0d172a;
+  --fg-muted: rgba(13, 23, 42, 0.68);
+  --border-base: rgba(13, 23, 42, 0.08);
+  --accent: #946a16;
+  --accent-2: #047857;
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  background: var(--bg-base);
+  color: var(--fg-base);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  font-feature-settings: "ss01", "cv11", "cv02";
+  letter-spacing: -0.005em;
+}
+
+.font-display {
+  font-family: "Fraunces", ui-serif, Georgia, serif;
+  font-feature-settings: "ss01";
+  letter-spacing: -0.02em;
+}
+
+.font-mono {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-feature-settings: "ss01";
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-elevated);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #d4a21a, #8c6213);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #efc84a, #b48214);
+}
+
+/* Animated gradient */
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.animated-gradient {
+  background-size: 300% 300%;
+  animation: gradientShift 10s ease infinite;
+}
+
+/* Floating orbs */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-30px) translateX(10px); }
+}
+.float-slow { animation: floatY 9s ease-in-out infinite; }
+.float-medium { animation: floatY 6s ease-in-out infinite; }
+.float-fast { animation: floatY 4s ease-in-out infinite; }
+
+/* Shimmer */
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(212, 162, 26, 0.15), transparent);
+  background-size: 1000px 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Glow */
+.gold-glow {
+  box-shadow: 0 0 40px rgba(212, 162, 26, 0.25), 0 0 80px rgba(212, 162, 26, 0.1);
+}
+.navy-glow {
+  box-shadow: 0 0 60px rgba(43, 70, 184, 0.25);
+}
+
+/* Grid background */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(212, 162, 26, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 162, 26, 0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.bg-grid-light {
+  background-image:
+    linear-gradient(rgba(43, 70, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(43, 70, 184, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+html.light .bg-grid {
+  background-image:
+    linear-gradient(rgba(43, 70, 184, 0.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(43, 70, 184, 0.10) 1px, transparent 1px);
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.glass-strong {
+  background: rgba(11, 21, 71, 0.55);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 162, 26, 0.18);
+}
+html.light .glass {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(11, 18, 48, 0.08);
+  box-shadow: 0 1px 3px rgba(11, 18, 48, 0.04);
+}
+html.light .glass-strong {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(212, 162, 26, 0.25);
+  box-shadow: 0 10px 40px -10px rgba(11, 18, 48, 0.12);
+}
+
+/* Pulse ring for WhatsApp */
+@keyframes pulseRing {
+  0% { transform: scale(0.9); opacity: 0.9; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+.pulse-ring::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: #25d366;
+  animation: pulseRing 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  z-index: -1;
+}
+
+/* Gold text gradient */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #efc84a 0%, #d4a21a 50%, #f5dc8a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+html.light .text-gold-gradient {
+  background: linear-gradient(135deg, #b48214 0%, #8c6213 50%, #d4a21a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-navy-gradient {
+  background: linear-gradient(135deg, #4e68d2 0%, #1a2e8f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Card tilt hover */
+.card-hover {
+  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px -20px rgba(212, 162, 26, 0.25), 0 0 0 1px rgba(212, 162, 26, 0.3);
+}
+
+/* Marquee */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Spin slow */
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.spin-slow { animation: spinSlow 30s linear infinite; }
+
+/* Selection */
+::selection {
+  background: #d4a21a;
+  color: #04071d;
+}
+
+/* Noise overlay */
+.noise::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+/* Hero spotlight */
+@keyframes spotlight {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(40px, -30px) scale(1.1); }
+  66% { transform: translate(-30px, 20px) scale(0.95); }
+}
+.spotlight { animation: spotlight 12s ease-in-out infinite; }
+
+/* Fade-up on load */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.8s ease both; }
+
+/* ---- Finance hero extras ---- */
+
+/* Animated mesh-gradient blob */
+@keyframes meshDrift {
+  0%, 100% { transform: translate3d(0,0,0) scale(1); }
+  33%      { transform: translate3d(6%, -4%, 0) scale(1.08); }
+  66%      { transform: translate3d(-5%, 5%, 0) scale(0.94); }
+}
+.mesh-blob { animation: meshDrift 18s ease-in-out infinite; will-change: transform; }
+
+/* Subtle aurora sweep */
+@keyframes auroraSweep {
+  0%   { transform: translateX(-20%) rotate(0deg); }
+  100% { transform: translateX(20%) rotate(360deg); }
+}
+.aurora { animation: auroraSweep 28s linear infinite; }
+
+/* Conic gradient pulse */
+@keyframes conicPulse {
+  to { transform: rotate(360deg); }
+}
+.conic-rotate { animation: conicPulse 14s linear infinite; }
+
+/* Ticker / marquee — faster, used for stock-tape look */
+@keyframes tickerScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ticker-track { animation: tickerScroll 40s linear infinite; }
+.ticker-track:hover { animation-play-state: paused; }
+
+/* Caret blink */
+@keyframes caretBlink { 50% { opacity: 0; } }
+.caret { animation: caretBlink 1s steps(1) infinite; }
+
+/* Soft pulse glow for primary CTA */
+@keyframes ctaPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(205, 162, 58, 0.45), 0 10px 30px -10px rgba(205, 162, 58, 0.5); }
+  50%      { box-shadow: 0 0 0 12px rgba(205, 162, 58, 0), 0 14px 36px -10px rgba(205, 162, 58, 0.65); }
+}
+.cta-pulse { animation: ctaPulse 2.4s ease-in-out infinite; }
+
+/* Subtle scan-line for "data" panels */
+@keyframes scanline {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+.scanline::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent, rgba(205,162,58,0.07), transparent);
+  animation: scanline 6s linear infinite;
+  pointer-events: none;
+}
+
+/* Grid that subtly moves */
+@keyframes gridDrift {
+  0%   { background-position: 0 0; }
+  100% { background-position: 60px 60px; }
+}
+.bg-grid-anim {
+  background-image:
+    linear-gradient(rgba(205, 162, 58, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(205, 162, 58, 0.07) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridDrift 40s linear infinite;
+}
+html.light .bg-grid-anim {
+  background-image:
+    linear-gradient(rgba(13, 23, 42, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(13, 23, 42, 0.08) 1px, transparent 1px);
+}
+
+/* Sparkline drawing */
+@keyframes drawLine { to { stroke-dashoffset: 0; } }
+.draw-line { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: drawLine 2.4s ease-out forwards; }
+
+/* Magnetic button hover */
+.magnetic { transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1); }
+
+/* Number flicker for live counters */
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 0.85; }
+}
+.flicker { animation: flicker 3s infinite; }
+
+/* ---------------------------------------------------------- */
+/* LIGHT MODE OVERRIDES                                       */
+/* Remap dark-mode utility classes used across pages so we    */
+/* don't have to add `dark:` variants on every component.     */
+/* ---------------------------------------------------------- */
+
+html.light .bg-navy-950 { background-color: #f6f7fb !important; }
+html.light .bg-navy-900 { background-color: #eef1ff !important; }
+html.light .bg-navy-900\/50 { background-color: rgba(238, 241, 255, 0.6) !important; }
+html.light .bg-navy-800 { background-color: #ffffff !important; }
+html.light .bg-navy-800\/50 { background-color: rgba(255, 255, 255, 0.7) !important; }
+html.light .bg-navy-700 { background-color: #ffffff !important; }
+
+html.light .bg-navy-950\/80 { background-color: rgba(255, 255, 255, 0.85) !important; backdrop-filter: blur(20px); }
+
+/* Gradients that go dark by default — soften for light mode */
+html.light .from-navy-800 { --tw-gradient-from: #e8ecff var(--tw-gradient-from-position); }
+html.light .via-navy-900 { --tw-gradient-via: #eef1ff var(--tw-gradient-via-position); }
+html.light .to-navy-950 { --tw-gradient-to: #ffffff var(--tw-gradient-to-position); }
+
+html.light .text-white { color: #0b1230 !important; }
+html.light .text-white\/90 { color: rgba(11, 18, 48, 0.9) !important; }
+html.light .text-white\/80 { color: rgba(11, 18, 48, 0.78) !important; }
+html.light .text-white\/70 { color: rgba(11, 18, 48, 0.72) !important; }
+html.light .text-white\/60 { color: rgba(11, 18, 48, 0.62) !important; }
+html.light .text-white\/50 { color: rgba(11, 18, 48, 0.52) !important; }
+html.light .text-white\/40 { color: rgba(11, 18, 48, 0.45) !important; }
+html.light .text-white\/30 { color: rgba(11, 18, 48, 0.35) !important; }
+
+html.light .border-white\/5 { border-color: rgba(11, 18, 48, 0.06) !important; }
+html.light .border-white\/10 { border-color: rgba(11, 18, 48, 0.1) !important; }
+html.light .border-white\/20 { border-color: rgba(11, 18, 48, 0.15) !important; }
+
+html.light .hover\:bg-white\/5:hover { background-color: rgba(11, 18, 48, 0.04) !important; }
+html.light .hover\:bg-white\/10:hover { background-color: rgba(11, 18, 48, 0.06) !important; }
+
+/* Gold tone tweaks for legibility in light mode */
+html.light .text-gold-400 { color: #b48214 !important; }
+html.light .text-gold-300 { color: #8c6213 !important; }
+html.light .hover\:text-gold-400:hover { color: #b48214 !important; }
+
+html.light .border-gold-500\/10 { border-color: rgba(180, 130, 20, 0.25) !important; }
+html.light .border-gold-500\/20 { border-color: rgba(180, 130, 20, 0.35) !important; }
+
+/* Drop-down/select option backgrounds */
+html.light .bg-navy-900 option,
+html.light option.bg-navy-900 { background: #ffffff; color: #0b1230; }
+
+/* Scrollbar track in light mode */
+html.light ::-webkit-scrollbar-track {
+  background: #eef1ff;
+}
+
+/* Tone down decorative glow overlays in light mode for cleaner look */
+html.light .bg-gold-500\/5,
+html.light .bg-gold-500\/10,
+html.light .bg-gold-500\/20 { background-color: rgba(212, 162, 26, 0.08) !important; }
+html.light .bg-gold-400\/20,
+html.light .bg-gold-400\/25 { background-color: rgba(212, 162, 26, 0.10) !important; }
+html.light .bg-navy-500\/10,
+html.light .bg-navy-500\/20,
+html.light .bg-navy-400\/20 { background-color: rgba(43, 70, 184, 0.08) !important; }
+
+/* Card hover shadow on light theme */
+html.light .card-hover:hover {
+  box-shadow: 0 20px 50px -20px rgba(11, 18, 48, 0.18), 0 0 0 1px rgba(180, 130, 20, 0.35);
+}
+
+/* Gold glow softer in light mode */
+html.light .gold-glow {
+  box-shadow: 0 10px 30px rgba(180, 130, 20, 0.18), 0 0 60px rgba(212, 162, 26, 0.08);
+}
+
+/* Navbar bg when scrolled — pick light surface */
+html.light header.fixed.bg-navy-950\/80,
+html.light .bg-navy-950\/80 {
+  background-color: rgba(255, 255, 255, 0.88) !important;
+  border-color: rgba(180, 130, 20, 0.18);
+}
+
+/* Selection in light mode */
+html.light ::selection {
+  background: #d4a21a;
+  color: #ffffff;
+}
