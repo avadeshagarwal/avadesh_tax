@@ -20,6 +20,7 @@ export const NAV_LINKS = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
+  { to: "/gst-calculator", label: "GST Calculator" },
   {
     to: "#",
     label: "Specialized",
