@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import GSTServices from "./pages/GSTServices";
-import GSTTools from "./pages/GSTTools";
+import GSTCalculator from "./pages/GSTCalculator";
 import IncomeTaxServices from "./pages/IncomeTaxServices";
 import BusinessRegistration from "./pages/BusinessRegistration";
 import Team from "./pages/Team";
@@ -37,7 +37,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/gst-services" element={<GSTServices />} />
-          <Route path="/gst-calculator" element={<GSTTools />} />
+          <Route path="/gst-calculator" element={<GSTCalculator />} />
           <Route path="/income-tax" element={<IncomeTaxServices />} />
           <Route path="/business-registration" element={<BusinessRegistration />} />
           <Route path="/team" element={<Team />} />
