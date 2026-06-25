@@ -178,7 +178,7 @@ export default function HeroHome() {
                 <span className="relative w-2 h-2 rounded-full bg-emerald-400"></span>
               </span>
               <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold-300">
-                Live · 1200+ Clients Across India
+                Live · Serving Clients Across India
               </span>
             </motion.div>
 
@@ -222,7 +222,7 @@ export default function HeroHome() {
               transition={{ duration: 0.6, delay: 0.22 }}
               className="mt-6 text-base md:text-lg text-white/65 max-w-2xl leading-relaxed"
             >
-              A modern freelance CA practice for founders, MSMEs, and professionals — combining decades of tax expertise with technology-led compliance, transparent pricing, and white-glove service.
+              Expert tax, GST, registration, and compliance support delivered through a streamlined online process. Serving businesses, startups, freelancers, and individuals across India.
             </motion.p>
 
             {/* CTAs */}

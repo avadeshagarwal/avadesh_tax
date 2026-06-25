@@ -1,6 +1,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { Analytics } from "@vercel/analytics/react";
+import { OrganizationSchema, FAQSchema } from "./components/SchemaMarkup";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import WhatsAppFloat from "./components/WhatsAppFloat";
@@ -15,6 +16,10 @@ import BusinessRegistration from "./pages/BusinessRegistration";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import Consultation from "./pages/Consultation";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsConditions from "./pages/TermsConditions";
+import Disclaimer from "./pages/Disclaimer";
+import RefundPolicy from "./pages/RefundPolicy";
 import NotFound from "./pages/NotFound";
 
 function ScrollToTop() {
@@ -28,6 +33,8 @@ function ScrollToTop() {
 export default function App() {
   return (
     <div className="min-h-screen relative overflow-hidden" style={{ background: "var(--bg-base)", color: "var(--fg-base)" }}>
+      <OrganizationSchema />
+      <FAQSchema />
       <Loader />
       <ScrollToTop />
       <Navbar />
@@ -43,6 +50,10 @@ export default function App() {
           <Route path="/team" element={<Team />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/consultation" element={<Consultation />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-conditions" element={<TermsConditions />} />
+          <Route path="/disclaimer" element={<Disclaimer />} />
+          <Route path="/refund-policy" element={<RefundPolicy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>

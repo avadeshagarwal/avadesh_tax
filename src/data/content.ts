@@ -36,9 +36,9 @@ export const NAV_LINKS = [
 
 export const STATS = [
   { value: 5, suffix: "+", label: "Years of Experience" },
-  { value: 1200, suffix: "+", label: "Happy Clients" },
-  { value: 25, suffix: "+", label: "Expert Services" },
-  { value: 28, suffix: "", label: "States Served in India" },
+  { value: 25, suffix: "+", label: "Services Offered" },
+  { value: 28, suffix: "", label: "States Served" },
+  { value: 100, suffix: "%", label: "Online Process" },
 ];
 
 export const TRUST_BADGES = [
@@ -46,7 +46,7 @@ export const TRUST_BADGES = [
   "Serving Clients Across India",
   "Professional Tax Experts",
   "Fast & Hassle-Free Process",
-  "Affordable Freelance CA Services",
+  "Expert Tax & Compliance Services",
   "Trusted Compliance Solutions",
 ];
 
@@ -121,7 +121,7 @@ export const TEAM = [
 export const FAQS = [
   { q: "Who can benefit from your consultancy services?", a: "Any Indian individual, freelancer, startup, MSME, or established business needing GST, income tax, registration, or compliance services. We serve clients across all 28 states and 8 UTs." },
   { q: "Do you provide services online across India?", a: "Yes. 100% of our services are delivered online via secure video consultations, e-signatures, and cloud document exchange — so location is never a barrier." },
-  { q: "How are your fees different from traditional CA firms?", a: "As a freelance consultancy, we have lower overheads, which means you get the same expert quality at 30–50% lower cost compared to traditional CA firms." },
+  { q: "How are your fees structured?", a: "We offer transparent, competitive pricing for all services with no hidden charges. Our streamlined online process helps us deliver quality services efficiently. Contact us for a custom quote based on your specific needs." },
   { q: "How quickly can I get a GST registration done?", a: "Typically 3–7 working days, subject to departmental processing and document readiness. We handle end-to-end documentation and follow-ups." },
   { q: "Is my financial data safe with you?", a: "Absolutely. We use encrypted document sharing, secure cloud storage, and sign NDAs on request. Your data is never shared with third parties." },
   { q: "Can you help with pending notices from the department?", a: "Yes. We specialize in handling scrutiny, demand, and mismatch notices from GST and Income Tax departments with precise, legally sound replies." },
@@ -129,8 +129,8 @@ export const FAQS = [
 
 export const TESTIMONIALS = [
   { name: "Rohit Sharma", role: "Founder, Sharma Traders", text: "GST registration and monthly filings handled flawlessly. Their attention to detail saved us from multiple notices. Highly recommended for MSMEs.", rating: 5 },
-  { name: "Ananya Verma", role: "Freelance Designer", text: "My ITR filing was done in under an hour. They explained every deduction and saved me ₹42,000 in taxes. Amazing service!", rating: 5 },
-  { name: "Vikram Mehta", role: "Director, Mehta Industries", text: "From Pvt Ltd incorporation to trademark — everything was delivered on time with clear communication. Truly premium consultancy.", rating: 5 },
+  { name: "Ananya Verma", role: "Freelance Designer", text: "The team helped me understand my tax obligations and identified deductions I had missed. The entire process was straightforward and well-explained.", rating: 5 },
+  { name: "Vikram Mehta", role: "Director, Mehta Industries", text: "From company incorporation to trademark registration, the team handled everything professionally. Clear communication and timely delivery throughout.", rating: 5 },
   { name: "Priya Nair", role: "NRI Entrepreneur", text: "Their international taxation expertise helped me structure my Indian investments tax-efficiently under DTAA. Exceptional knowledge.", rating: 5 },
   { name: "Arjun Kapoor", role: "Startup Founder", text: "DPIIT registration, 80-IAC tax holiday, GST — all sorted by the team. They feel like an in-house finance department.", rating: 5 },
 ];
@@ -146,5 +146,5 @@ export const TIMELINE = [
   { year: "2019", title: "The Beginning", desc: "Started as an independent tax practice serving local businesses in Rajasthan." },
   { year: "2021", title: "Going Digital", desc: "Expanded services online to serve clients across India with secure digital workflows." },
   { year: "2023", title: "Team Expansion", desc: "Onboarded specialized experts in international taxation, GST, and company law." },
-  { year: "2025", title: "1200+ Clients", desc: "Crossed 1200+ happy clients with a 98% retention rate across 28 states." },
+  { year: "2025", title: "Growing Client Base", desc: "Serving clients across 28 states with a focus on quality service and client satisfaction." },
 ];

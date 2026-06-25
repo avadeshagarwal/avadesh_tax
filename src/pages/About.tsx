@@ -9,7 +9,7 @@ export default function About() {
       <PageHero
         badge="About Us"
         title={<>Built on <span className="text-gold-gradient">Trust</span>, Powered by <span className="text-gold-gradient">Expertise</span></>}
-        subtitle="We are a premium freelance CA & tax consultancy committed to delivering world-class financial services to businesses and individuals across India."
+        subtitle="We provide expert tax, GST, registration, and compliance services to businesses and individuals across India through a streamlined online process."
       />
 
       {/* Vision & Mission */}
@@ -33,7 +33,7 @@ export default function About() {
               </div>
               <h3 className="font-display text-2xl font-bold text-white mb-3">Our Vision</h3>
               <p className="text-white/70 leading-relaxed">
-                To become India's most trusted freelance CA consultancy — known for premium service, ethical practices, and making professional financial guidance accessible to every Indian business, big or small.
+                To become a trusted tax and compliance partner — known for ethical practices, transparency, and making professional guidance accessible to every Indian business.
               </p>
             </div>
           </Reveal>
@@ -51,10 +51,10 @@ export default function About() {
               </h2>
               <div className="mt-6 space-y-4 text-white/70 leading-relaxed">
                 <p>
-                  Founded in 2019, Avadesh Agarwal Tax Consultancy began as a small independent practice with a single mission: deliver professional CA services without the big-firm price tag.
+                  Founded in 2019, Avadesh Agarwal Tax Consultancy began as an independent tax practice with a mission: deliver professional tax and compliance services with transparency and efficiency.
                 </p>
                 <p>
-                  Today, we serve over 1,200 clients across 28 Indian states — from solopreneurs and freelancers to MSMEs and established companies. Our digital-first approach means you get expert advice from anywhere in India, with secure cloud-based document sharing and transparent online workflows.
+                  Today, we serve clients across 28 Indian states — from solopreneurs and freelancers to MSMEs and established companies. Our digital-first approach means you get expert advice from anywhere in India, with secure cloud-based document sharing and transparent online workflows.
                 </p>
                 <p>
                   What sets us apart is our team of specialized experts — each with 5+ years of domain experience in international taxation, GST compliance, and business registration.
