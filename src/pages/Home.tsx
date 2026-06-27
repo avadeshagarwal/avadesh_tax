@@ -114,17 +114,17 @@ export default function Home() {
               <div>
                 <SectionBadge>Why Choose Us</SectionBadge>
                 <h2 className="mt-5 font-display text-3xl md:text-5xl font-bold text-white leading-tight">
-                  The <span className="text-gold-gradient">Premium Freelance</span> Alternative to Big CA Firms
+                  Expert Tax & Compliance <span className="text-gold-gradient">Services</span> You Can Trust
                 </h2>
                 <p className="mt-5 text-white/60">
-                  Get the same expertise, better service, and 30–50% lower fees — all delivered online, anywhere in India.
+                  Expert tax, GST, registration, and compliance support delivered through a streamlined online process across India.
                 </p>
                 <div className="mt-8 space-y-4">
                   {[
-                    { icon: Award, title: "Qualified Professionals", desc: "Team of certified CAs and tax experts with 5+ years experience." },
+                    { icon: Award, title: "Expert Professionals", desc: "Team of tax experts with 5+ years experience in GST, income tax, and compliance." },
                     { icon: Zap, title: "Fast Turnaround", desc: "Most services delivered in 3–7 days, not weeks." },
-                    { icon: Shield, title: "100% Data Security", desc: "Encrypted document sharing with NDA-backed confidentiality." },
-                    { icon: Users, title: "Dedicated Support", desc: "Direct access to your expert via WhatsApp, call, or video." },
+                    { icon: Shield, title: "100% Data Security", desc: "Secure cloud-based document sharing with encryption and confidentiality." },
+                    { icon: Users, title: "Transparent Pricing", desc: "Clear, competitive pricing with no hidden charges or surprise fees." },
                   ].map((item, i) => (
                     <div key={i} className="flex gap-4 p-4 rounded-2xl hover:bg-white/5 transition-colors">
                       <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-gold-400/20 to-gold-600/10 border border-gold-500/20 flex items-center justify-center text-gold-400 flex-shrink-0">
@@ -146,10 +146,10 @@ export default function Home() {
                 <div className="relative rounded-3xl p-8 glass-strong border border-gold-500/20">
                   <div className="grid grid-cols-2 gap-4">
                     {[
-                      { label: "Average Response", value: "< 30 min", icon: Zap },
-                      { label: "Client Retention", value: "98%", icon: Users },
-                      { label: "Success Rate", value: "99.5%", icon: Award },
-                      { label: "Cost Savings", value: "30-50%", icon: TrendingUp },
+                    { label: "Average Response", value: "< 30 min", icon: Zap },
+                    { label: "Client Retention", value: "98%", icon: Users },
+                    { label: "Online Process", value: "100%", icon: Award },
+                    { label: "Services Offered", value: "25+", icon: TrendingUp },
                     ].map((item, i) => (
                       <div key={i} className="p-5 rounded-2xl bg-white/5 border border-white/5 text-center hover:border-gold-500/30 transition-colors">
                         <div className="w-10 h-10 rounded-xl bg-gold-500/10 flex items-center justify-center text-gold-400 mx-auto mb-3">
@@ -168,7 +168,7 @@ export default function Home() {
                       <Star className="w-4 h-4 text-gold-400 fill-gold-400" />
                       <Star className="w-4 h-4 text-gold-400 fill-gold-400" />
                     </div>
-                    <p className="text-sm text-white/80 italic">"Truly premium service at freelance-friendly pricing. My go-to tax consultancy!"</p>
+                    <p className="text-sm text-white/80 italic">"Professional service with transparent pricing and quick turnaround. Highly recommended!"</p>
                     <div className="mt-2 text-xs text-white/50">— Ananya V., Freelance Designer</div>
                   </div>
                 </div>
