@@ -82,21 +82,21 @@ export function GSTLayout({ activeTab, onTabChange, children }: GSTLayoutProps) 
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+    <div className="min-h-screen bg-gradient-to-br from-white to-slate-50 dark:from-slate-900 dark:to-slate-950">
       {/* Header */}
-      <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/80 backdrop-blur-sm">
+      <header className="sticky top-20 lg:top-0 z-40 border-b border-slate-200 dark:border-slate-700 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm">
         <div className="container flex items-center justify-between h-16 px-4">
           <div className="flex items-center gap-3 flex-1 min-w-0">
             <div className="h-8 w-8 flex-shrink-0 rounded-lg bg-gradient-to-br from-emerald-500 to-blue-600 flex items-center justify-center">
               <Calculator className="h-5 w-5 text-white" />
             </div>
-            <h1 className="text-lg lg:text-xl font-bold text-slate-900 truncate">GST Calculator Suite</h1>
+            <h1 className="text-lg lg:text-xl font-bold text-slate-900 dark:text-white truncate">GST Calculator Suite</h1>
           </div>
 
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 hover:bg-slate-100 rounded-lg transition-colors"
+            className="lg:hidden p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors text-slate-900 dark:text-white"
           >
             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -106,7 +106,7 @@ export function GSTLayout({ activeTab, onTabChange, children }: GSTLayoutProps) 
       <div className="flex flex-col lg:flex-row">
         {/* Sidebar Navigation */}
         <aside
-          className={`w-full lg:w-64 border-r border-slate-200 bg-white transition-all duration-300 ${
+          className={`w-full lg:w-64 border-r border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 transition-all duration-300 fixed lg:relative left-0 top-20 lg:top-0 h-[calc(100vh-5rem)] lg:h-auto z-30 lg:z-auto ${
             mobileMenuOpen ? "block" : "hidden lg:block"
           }`}
         >
@@ -120,17 +120,17 @@ export function GSTLayout({ activeTab, onTabChange, children }: GSTLayoutProps) 
                 }}
                 className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 ${
                   activeTab === tab.id
-                    ? "bg-emerald-50 border-l-4 border-emerald-500 text-emerald-900"
-                    : "text-slate-700 hover:bg-slate-50 border-l-4 border-transparent"
+                    ? "bg-emerald-50 dark:bg-emerald-900/20 border-l-4 border-emerald-500 text-emerald-900 dark:text-emerald-300"
+                    : "text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border-l-4 border-transparent"
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <span className={activeTab === tab.id ? "text-emerald-600" : "text-slate-400"}>
+                  <span className={activeTab === tab.id ? "text-emerald-600 dark:text-emerald-400" : "text-slate-400 dark:text-slate-500"}>
                     {tab.icon}
                   </span>
                   <div className="flex-1 min-w-0">
                     <p className="font-medium text-sm">{tab.label}</p>
-                    <p className="text-xs text-slate-500 truncate">{tab.description}</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 truncate">{tab.description}</p>
                   </div>
                 </div>
               </button>
@@ -139,7 +139,7 @@ export function GSTLayout({ activeTab, onTabChange, children }: GSTLayoutProps) 
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 p-4 lg:p-8">
+        <main className="flex-1 p-4 lg:p-8 w-full lg:w-auto">
           <div className="max-w-6xl mx-auto">{children}</div>
         </main>
       </div>
@@ -159,8 +159,8 @@ export function PageHeader({
 }) {
   return (
     <div className="mb-8">
-      <h2 className="text-3xl font-bold text-slate-900 mb-2">{title}</h2>
-      <p className="text-slate-600">{description}</p>
+      <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">{title}</h2>
+      <p className="text-slate-600 dark:text-slate-400">{description}</p>
     </div>
   );
 }

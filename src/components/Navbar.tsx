@@ -28,8 +28,8 @@ export default function Navbar() {
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-navy-950/80 backdrop-blur-xl border-b border-gold-500/10 shadow-[0_8px_40px_-20px_rgba(11,18,48,0.18)]"
-          : "bg-transparent"
+          ? "bg-white/95 dark:bg-navy-950/80 backdrop-blur-xl border-b border-gold-500/10 dark:border-gold-500/10 shadow-lg dark:shadow-[0_8px_40px_-20px_rgba(11,18,48,0.18)]"
+          : "bg-white/50 dark:bg-transparent backdrop-blur-sm"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
@@ -41,10 +41,10 @@ export default function Navbar() {
               <div className="absolute inset-0 rounded-xl bg-gold-400/30 blur-md opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </div>
             <div className="hidden sm:block leading-tight">
-              <div className="font-display text-white text-lg font-bold tracking-tight">
+              <div className="font-display text-navy-950 dark:text-white text-lg font-bold tracking-tight">
                 {BRAND.name}
               </div>
-              <div className="text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold">
+              <div className="text-[10px] uppercase tracking-[0.2em] text-gold-600 dark:text-gold-400 font-semibold">
                 Tax Consultancy
               </div>
             </div>
@@ -61,7 +61,7 @@ export default function Navbar() {
                     onMouseEnter={() => setDropOpen(true)}
                     onMouseLeave={() => setDropOpen(false)}
                   >
-                    <button className="px-4 py-2 text-sm font-medium text-white/80 hover:text-gold-400 transition-colors flex items-center gap-1">
+                    <button className="px-4 py-2 text-sm font-medium text-navy-950/70 dark:text-white/80 hover:text-gold-600 dark:hover:text-gold-400 transition-colors flex items-center gap-1">
                       {link.label}
                       <ChevronDown className={`w-4 h-4 transition-transform ${dropOpen ? "rotate-180" : ""}`} />
                     </button>
@@ -79,7 +79,7 @@ export default function Navbar() {
                               <Link
                                 key={c.to}
                                 to={c.to}
-                                className="block px-4 py-2.5 rounded-lg text-sm text-white/80 hover:bg-gold-500/10 hover:text-gold-400 transition-colors"
+                                className="block px-4 py-2.5 rounded-lg text-sm text-navy-950/70 dark:text-white/80 hover:bg-gold-500/10 hover:text-gold-600 dark:hover:text-gold-400 transition-colors"
                               >
                                 {c.label}
                               </Link>
@@ -98,7 +98,7 @@ export default function Navbar() {
                   end={link.to === "/"}
                   className={({ isActive }) =>
                     `relative px-4 py-2 text-sm font-medium transition-colors ${
-                      isActive ? "text-gold-400" : "text-white/80 hover:text-gold-400"
+                      isActive ? "text-gold-600 dark:text-gold-400" : "text-navy-950/70 dark:text-white/80 hover:text-gold-600 dark:hover:text-gold-400"
                     }`
                   }
                 >
