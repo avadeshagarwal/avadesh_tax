@@ -127,37 +127,7 @@ export default function Navbar() {
               <Phone className="w-4 h-4" />
               <span className="font-medium">{BRAND.phoneDisplay}</span>
             </a>
-            <button
-              onClick={toggle}
-              aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-              className="relative w-10 h-10 rounded-full glass flex items-center justify-center text-white/90 hover:text-gold-400 hover:border-gold-400/40 transition-all"
-            >
-              <AnimatePresence mode="wait" initial={false}>
-                {theme === "dark" ? (
-                  <motion.span
-                    key="moon"
-                    initial={{ rotate: -90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: 90, opacity: 0 }}
-                    transition={{ duration: 0.25 }}
-                    className="absolute inset-0 flex items-center justify-center"
-                  >
-                    <Moon className="w-4.5 h-4.5" style={{ width: 18, height: 18 }} />
-                  </motion.span>
-                ) : (
-                  <motion.span
-                    key="sun"
-                    initial={{ rotate: 90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: -90, opacity: 0 }}
-                    transition={{ duration: 0.25 }}
-                    className="absolute inset-0 flex items-center justify-center"
-                  >
-                    <Sun className="w-4.5 h-4.5" style={{ width: 18, height: 18 }} />
-                  </motion.span>
-                )}
-              </AnimatePresence>
-            </button>
+
             <Link
               to="/consultation"
               className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-gold-400 to-gold-600 text-navy-950 font-semibold text-sm shadow-lg shadow-gold-500/30 hover:shadow-gold-500/50 hover:scale-105 transition-all"

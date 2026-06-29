@@ -5,20 +5,27 @@ export const organizationSchema = {
   "@type": "Organization",
   "name": BRAND.full,
   "url": `https://${BRAND.domain}`,
-  "logo": `https://${BRAND.domain}/logo.png`,
-  "description": "Professional GST, income tax, business registration, and compliance services for businesses across India",
+  "logo": "https://d2xsxph8kpxj0f.cloudfront.net/310519663607453869/7dz5XW3iucUDziXx7qTEk5/logo-4gsS9n9rmLh67k2oDG3hAG.png",
+  "description": "Professional GST registration, income tax filing, business registration, and compliance services for businesses, startups, and individuals across India",
   "sameAs": [
     "https://www.facebook.com/avadeshagarwal",
     "https://www.instagram.com/avadeshagarwal",
     "https://www.linkedin.com/company/avadesh-agarwal-tax-consultancy"
   ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "contactType": "Customer Service",
-    "telephone": "+91-7976439089",
-    "email": BRAND.email,
-    "areaServed": "IN"
-  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "Customer Service",
+      "telephone": "+91-7976439089",
+      "email": BRAND.email,
+      "areaServed": "IN"
+    },
+    {
+      "@type": "ContactPoint",
+      "contactType": "WhatsApp Support",
+      "telephone": "+91-7976439089"
+    }
+  ],
   "address": {
     "@type": "PostalAddress",
     "addressCountry": "IN",
@@ -28,7 +35,18 @@ export const organizationSchema = {
   "founder": {
     "@type": "Person",
     "name": BRAND.name
-  }
+  },
+  "knowsAbout": [
+    "GST Services",
+    "Income Tax Filing",
+    "Business Registration",
+    "Tax Compliance",
+    "Company Registration",
+    "LLP Registration",
+    "MSME Registration",
+    "Trademark Registration",
+    "Tax Planning"
+  ]
 };
 
 export const serviceSchema = (service: typeof SERVICES[0]) => ({
@@ -61,21 +79,23 @@ export const faqSchema = {
 
 export const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "ProfessionalService",
   "name": BRAND.full,
-  "image": `https://${BRAND.domain}/logo.png`,
-  "description": "Professional tax and compliance services",
+  "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663607453869/7dz5XW3iucUDziXx7qTEk5/logo-4gsS9n9rmLh67k2oDG3hAG.png",
+  "description": "Expert GST, income tax, business registration, and compliance services for businesses and individuals",
   "url": `https://${BRAND.domain}`,
   "telephone": "+91-7976439089",
   "email": BRAND.email,
   "priceRange": "$$",
-  "areaServed": {
-    "@type": "State",
+  "areaServed": "IN",
+  "serviceArea": {
+    "@type": "Country",
     "name": "India"
   },
-  "serviceArea": {
-    "@type": "State",
-    "name": "India"
+  "knowsLanguage": "en",
+  "brand": {
+    "@type": "Brand",
+    "name": BRAND.full
   }
 };
 

@@ -13,11 +13,8 @@ const ThemeContext = createContext<ThemeContextValue | null>(null);
 const STORAGE_KEY = "avadesh-theme";
 
 function getInitialTheme(): Theme {
-  if (typeof window === "undefined") return "dark";
-  const stored = window.localStorage.getItem(STORAGE_KEY);
-  if (stored === "light" || stored === "dark") return stored;
-  const prefersLight = window.matchMedia?.("(prefers-color-scheme: light)").matches;
-  return prefersLight ? "light" : "dark";
+  // Force dark theme only
+  return "dark";
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
@@ -31,8 +28,14 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     window.localStorage.setItem(STORAGE_KEY, theme);
   }, [theme]);
 
-  const setTheme = (t: Theme) => setThemeState(t);
-  const toggle = () => setThemeState((t) => (t === "dark" ? "light" : "dark"));
+  const setTheme = (t: Theme) => {
+    // Only allow dark theme
+    if (t === "dark") setThemeState(t);
+  };
+  const toggle = () => {
+    // Disable toggle - always dark
+    return;
+  };
 
   return (
     <ThemeContext.Provider value={{ theme, toggle, setTheme }}>
